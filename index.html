@@ -4,69 +4,122 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>غراس</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif}
-body{background:#0E1210;color:#fff}
-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #1e2a22;position:sticky;top:0;background:#0E1210;z-index:10}
-.logo{font-weight:700;font-size:20px;color:#00FF88}
-nav{display:flex;gap:16px;font-size:12px}
-nav span{cursor:pointer;color:#6b7d73}
-nav span:hover{color:#00FF88}
-.btn-neon{background:#00FF88;color:#0E1210;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:700;border:none;cursor:pointer}
-.hero{padding:70px 20px 40px;text-align:center}
-.hero h1{font-size:32px;line-height:1.4;margin-bottom:14px;color:#D6E8D9}
-.hero h1 span{background:#00FF88;color:#0E1210;padding:0 8px;border-radius:6px}
-.hero p{color:#6b7d73;font-size:13px;max-width:330px;margin:0 auto 24px;line-height:1.8}
-.hero-btns{display:flex;gap:10px;justify-content:center}
-.btn-fill{background:#00FF88;color:#0E1210;padding:12px 20px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
-.btn-outline{background:transparent;color:#00FF88;border:1px solid #1e2a22;padding:12px 20px;border-radius:10px;cursor:pointer}
-.section{padding:50px 20px;border-top:1px solid #1e2a22}
-.section h2{color:#00FF88;font-size:16px;margin-bottom:12px}
-.card{background:#151C18;border:1px solid #1e2a22;border-radius:14px;padding:14px;margin-top:10px}
-.card h3{font-size:13px;color:#fff}
-.card p{font-size:11px;color:#6b7d73;margin-top:5px}
-.footer{text-align:center;padding:40px 20px 20px;border-top:1px solid #1e2a22;margin-top:30px;color:#5a6b62;font-size:11px;line-height:2}
+body{background:#07090a;color:#f5f1e8;overflow-x:hidden}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid #1d1a12;position:sticky;top:0;background:rgba(7,9,10,0.92);backdrop-filter:blur(12px);z-index:20}
+.logo{font-weight:800;font-size:22px;color:#FFD166;letter-spacing:.5px;text-shadow:0 0 18px rgba(255,209,102,0.35)}
+nav{display:flex;gap:8px}
+nav span{cursor:pointer;color:#8a8070;font-size:12px;padding:8px 14px;border-radius:999px;border:1px solid #222018;background:#12120f;transition:.25s;position:relative}
+nav span:hover{color:#FFD166;border-color:#3a3422;box-shadow:0 0 0 1px rgba(255,209,102,0.15) inset}
+nav span.active{color:#0a0a08;background:linear-gradient(180deg,#FFD166,#D4A72C);border-color:#FFD166;box-shadow:0 0 20px rgba(255,209,102,0.45),0 0 40px rgba(212,167,44,0.25);font-weight:700}
+
+.btn-neon{background:linear-gradient(180deg,#FFD166,#D4A72C);color:#0a0a08;padding:9px 16px;border-radius:999px;font-size:12.5px;font-weight:800;border:none;cursor:pointer;box-shadow:0 0 20px rgba(255,209,102,0.35);transition:.2s}
+.btn-neon:hover{box-shadow:0 0 28px rgba(255,209,102,0.55);transform:translateY(-1px)}
+.hero{padding:85px 20px 50px;text-align:center;position:relative}
+.hero::before{content:"";position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle at center, rgba(255,209,102,0.08) 0%, transparent 70%);pointer-events:none}
+.hero h1{font-size:34px;line-height:1.45;margin-bottom:14px;color:#fff9ec;font-weight:800}
+.hero h1 span{background:linear-gradient(180deg,#FFD166,#D4A72C);color:#0a0a08;padding:2px 12px;border-radius:8px;box-shadow:0 0 20px rgba(255,209,102,0.4);display:inline-block;transform:rotate(-1deg)}
+.hero p{color:#8c8475;font-size:13.5px;max-width:360px;margin:0 auto 28px;line-height:1.9}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-fill{background:linear-gradient(180deg,#FFD166,#D4A72C);color:#0a0a08;padding:12px 22px;border-radius:999px;border:none;font-weight:800;cursor:pointer;box-shadow:0 0 18px rgba(255,209,102,0.35)}
+.btn-outline{background:#12120f;color:#FFD166;border:1px solid #3a3422;padding:12px 22px;border-radius:999px;cursor:pointer;transition:.2s}
+.btn-outline:hover{border-color:#FFD166;box-shadow:0 0 14px rgba(255,209,102,0.25)}
+.section{padding:48px 20px;border-top:1px solid #1a1812;max-width:520px;margin:0 auto}
+.section h2{color:#FFD166;font-size:15px;margin-bottom:16px;text-shadow:0 0 12px rgba(255,209,102,0.35)}
+.card{background:linear-gradient(180deg,#141310,#0e0e0c);border:1px solid #231f16;border-radius:16px;padding:16px;margin-top:12px;cursor:pointer;transition:.25s;position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;border-radius:16px;box-shadow:0 0 0 1px rgba(255,209,102,0) inset;transition:.25s;pointer-events:none}
+.card:hover{border-color:#3d371f;transform:translateY(-2px)}
+.card:hover::after{box-shadow:0 0 0 1px rgba(255,209,102,0.18) inset, 0 0 22px rgba(255,209,102,0.08)}
+.card h3{font-size:14px;color:#fff7e3;font-weight:700}
+.card p{font-size:11.5px;color:#8c8475;margin-top:6px}
+.tag{display:inline-block;margin-top:10px;font-size:10px;background:#1e1c14;border:1px solid #3a3620;color:#FFD166;padding:3px 9px;border-radius:999px}
+.footer{text-align:center;padding:38px 20px 24px;border-top:1px solid #1a1812;margin-top:30px;color:#6b6556;font-size:11px;line-height:2;letter-spacing:.3px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);z-index:50;align-items:center;justify-content:center;padding:18px}
+.modal.show{display:flex}
+.modal-box{background:#11100e;border:1px solid #3a3422;border-radius:18px;padding:20px;width:100%;max-width:360px;box-shadow:0 0 30px rgba(255,209,102,0.15)}
+.modal-box h3{color:#FFD166;font-size:14px;margin-bottom:12px}
+.modal-box input,.modal-box textarea{width:100%;background:#07090a;border:1px solid #2a271e;border-radius:10px;padding:11px;margin-top:8px;color:#fff7e3;font-size:13px;outline:none}
+.modal-box input:focus,.modal-box textarea:focus{border-color:#FFD166;box-shadow:0 0 0 2px rgba(255,209,102,0.15)}
 </style>
 </head>
 <body>
 <header>
-<button class="btn-neon" onclick="document.getElementById('mobs').scrollIntoView({behavior:'smooth'})">ابدأ مبادرة</button>
-<div style="display:flex;align-items:center;gap:12px">
+<button class="btn-neon" id="startBtn">ابدأ مبادرة</button>
+<div style="display:flex;align-items:center;gap:14px">
 <nav>
-<span onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">الرئيسية</span>
-<span onclick="document.getElementById('mobs').scrollIntoView({behavior:'smooth'})">المبادرات</span>
-<span onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">عن المنصة</span>
+<span id="nav-home" class="active">الرئيسية</span>
+<span id="nav-mobs">المبادرات</span>
+<span id="nav-about">عن المنصة</span>
 </nav>
 <div class="logo">🌿 غراس</div>
 </div>
 </header>
 
 <div class="hero" id="home">
-<h1>أنت تملك <span>المهارة </span> والأرض<br>تحتاجها</h1>
-<غِراس هي مساحتك المجتمعية لتبادل المهارات سواء كنت مصمماً مبرمجاً او مصورا أو محباً للعمل الميداني هناك مبادرة بيئية تنتظر بصمتك</p>
+<h1>أنت تملك <span>المهارة</span> والأرض<br>تحتاجها</h1>
+<p>غِراس هي مساحتك المجتمعية لتبادل المهارات سواء كنت مصمم مبرمج مصور أو محب للعمل الميداني هناك مبادرة بيئية تنتظر بصمتك.</p>
 <div class="hero-btns">
-<button class="btn-fill">سجل بمهارتك</button>
-<button class="btn-outline">استكشف الفرص</button>
+<button class="btn-fill" id="joinBtn">سجل بمهارتك</button>
+<button class="btn-outline" id="exploreBtn">استكشف الفرص</button>
 </div>
 </div>
 
 <div class="section" id="mobs">
 <h2>🌱 مبادرات تحتاج مهاراتك</h2>
-<div class="card"><h3>تصميم لوجو لمبادرة تشجير</h3><p>القاهرة - تطوع 3 ساعات</p></div>
-<div class="card"><h3>تصوير حملة تنظيف النيل</h3><p> يوم الجمعة</p></div>
-<div class="card"><h3>كتابة محتوى لتوعية بيئية</h3><p>أونلاين- مرن</p></div>
+<div class="card" data-title="تصميم لوجو لمبادرة تشجير"><h3>تصميم لوجو لمبادرة تشجير</h3><p>القاهرة - تطوع 3 ساعات</p><span class="tag">تصميم</span></div>
+<div class="card" data-title="تصوير حملة تنظيف النيل"><h3>تصوير حملة تنظيف النيل</h3><p>يوم الجمعة - كورنيش النيل</p><span class="tag">تصوير</span></div>
+<div class="card" data-title="كتابة محتوى لتوعية بيئية"><h3>كتابة محتوى لتوعية بيئية</h3><p>أونلاين - مرن</p><span class="tag">كتابة</span></div>
 </div>
 
 <div class="section" id="about">
 <h2>عن غراس</h2>
-<div class="card"><p style="color:#9aada3;line-height:1.8">منصة بسيطة عملناها عشان نربط الناس اللي عندها مهارات بالمبادرات البيئية اللي محتاجة مساعدة بجد. الفكرة كلها تطوع وتبادل خبرات.</p></div>
+<div class="card" style="cursor:default"><p style="color:#b5ad9a;line-height:1.9;font-size:12.8px">منصة بسيطة عملناها عشان نربط الناس اللي عندها مهارات بالمبادرات البيئية اللي محتاجة مساعدة بجد. الفكرة كلها تطوع وتبادل خبرات، من غير تعقيد ولا حوارات.</p></div>
 </div>
 
 <div class="footer">
 created by dina alssawy <br>
-All Rights Reserved © 2026 - غراس 🌿
+All Rights Reserved © 2026 - غراس
 </div>
 
+<div class="modal" id="modal">
+<div class="modal-box">
+<h3 id="modalTitle">سجل بمهارتك</h3>
+<input type="text" id="nameInp" placeholder="اسمك">
+<input type="text" id="skillInp" placeholder="مهارتك (تصميم / تصوير / كتابة...)">
+<textarea id="msgInp" placeholder="ازاي حابب تساعد؟" rows="3"></textarea>
+<button class="btn-fill" id="sendBtn" style="width:100%;margin-top:12px">إرسال</button>
+<button class="btn-outline" id="closeBtn" style="width:100%;margin-top:8px">إغلاق</button>
+</div>
+</div>
+
+<script>
+const sections={home:document.getElementById('home'),mobs:document.getElementById('mobs'),about:document.getElementById('about')};
+const navs={home:document.getElementById('nav-home'),mobs:document.getElementById('nav-mobs'),about:document.getElementById('nav-about')};
+function setActive(k){Object.values(navs).forEach(n=>n.classList.remove('active'));navs[k].classList.add('active');sections[k].scrollIntoView({behavior:'smooth',block:'start'})}
+navs.home.onclick=()=>setActive('home');navs.mobs.onclick=()=>setActive('mobs');navs.about.onclick=()=>setActive('about');
+document.getElementById('exploreBtn').onclick=()=>setActive('mobs');
+const modal=document.getElementById('modal'),modalTitle=document.getElementById('modalTitle');
+function openModal(t){modalTitle.textContent=t;modal.classList.add('show')}
+function closeModal(){modal.classList.remove('show')}
+document.getElementById('joinBtn').onclick=()=>openModal('سجل بمهارتك');
+document.getElementById('startBtn').onclick=()=>openModal('ابدأ مبادرة جديدة');
+document.getElementById('closeBtn').onclick=closeModal;
+modal.onclick=(e)=>{if(e.target===modal)closeModal()};
+document.querySelectorAll('.card[data-title]').forEach(c=>{c.onclick=()=>openModal('التطوع في: '+c.dataset.title)});
+document.getElementById('sendBtn').onclick=()=>{
+ const n=document.getElementById('nameInp').value.trim();
+ if(!n){alert('اكتب اسمك الأول');return;}
+ alert('تم يا '+n+' 🌿 هنتواصل معاك قريب');
+ closeModal();
+};
+window.addEventListener('scroll',()=>{
+ let cur='home';const y=window.scrollY+140;
+ for(let k in sections){if(sections[k].offsetTop<=y)cur=k;}
+ Object.values(navs).forEach(n=>n.classList.remove('active'));
+ if(navs[cur])navs[cur].classList.add('active');
+});
+</script>
 </body>
 </html>
